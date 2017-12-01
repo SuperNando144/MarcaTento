@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="marcatento.com.marcatento.controller.MarcadorActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/nos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:text="Nós"
+        android:textColor="@color/darkRed"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/marcadorNos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nos"
+        android:text="0"
+        android:textColor="@color/darkRed"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/eles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eles"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/marcadorNos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/eles"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp" />
+
+    <Chronometer
+        android:id="@+id/cronometro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/placeholder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
+
+    <TextView
+        android:id="@+id/truco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Truco!"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/btnMais9"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp" />
+
+    <TextView
+        android:id="@+id/marcadorEles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/eles"
+        android:layout_alignLeft="@+id/marcadorNos"
+        android:layout_alignStart="@+id/marcadorNos" />
+
+    <Button
+        android:id="@+id/btnMenosEles"
+        style="@style/ButtonStyleEles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:layout_alignBaseline="@+id/marcadorEles"
+        android:layout_alignBottom="@+id/marcadorEles"
+        android:layout_alignRight="@+id/btnMenosNos"
+        android:layout_alignEnd="@+id/btnMenosNos"
+        android:onClick="retirarPtsEles"
+        />
+
+
+    <Button
+        android:id="@+id/btnMenosNos"
+        style="@style/ButtonStyleNos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/eles"
+        android:layout_toLeftOf="@+id/logo"
+        android:text="-"
+        android:onClick="retirarPtsNos"
+        />
+
+    <Button
+        android:id="@+id/btnMaisEles"
+        style="@style/ButtonStyleEles"
+        android:text="+"
+        android:layout_alignTop="@+id/btnMenosEles"
+        android:layout_alignLeft="@+id/btnMaisNos"
+        android:layout_alignStart="@+id/btnMaisNos"
+        android:onClick="adicionarPtsEles"
+        />
+
+    <Button
+        android:id="@+id/btnMaisNos"
+        style="@style/ButtonStyleNos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/eles"
+        android:layout_toRightOf="@+id/logo"
+        android:text="+"
+        android:onClick="adicionarPtsNos"
+        />
+
+    <Button
+        android:id="@+id/btnMais3"
+        style="@style/ButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="3"
+        android:onClick="adicionarTres"
+        android:layout_alignBaseline="@+id/btnMais6"
+        android:layout_alignBottom="@+id/btnMais6"
+        android:layout_alignLeft="@+id/btnMenosEles"
+        android:layout_alignStart="@+id/btnMenosEles" />
+
+    <Button
+        android:id="@+id/btnMais9"
+        style="@style/ButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="adicionarNove"
+        android:text="9"
+        android:layout_alignTop="@+id/btnMais6"
+        android:layout_toRightOf="@+id/truco"
+        android:layout_toEndOf="@+id/truco" />
+
+    <Button
+        android:id="@+id/btnMais6"
+        style="@style/ButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="adicionarSeis"
+        android:text="6"
+        android:layout_marginBottom="29dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/nos"
+        android:layout_toStartOf="@+id/nos" />
+
+    <Button
+        android:id="@+id/btnMais12"
+        style="@style/ButtonStyle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="adicionarDoze"
+        android:text="12"
+        android:layout_alignTop="@+id/btnMais9"
+        android:layout_alignRight="@+id/btnMaisEles"
+        android:layout_alignEnd="@+id/btnMaisEles" />
+
+    <Button
+        android:id="@+id/voltar"
+        style="@style/ButtonStyle"
+        android:background="@color/black"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="voltar"
+        android:text="Voltar"
+        android:textSize="10dp"
+        android:layout_alignBottom="@+id/logo"
+        android:layout_alignLeft="@+id/btnMenosNos"
+        android:layout_alignStart="@+id/btnMenosNos"
+        android:layout_marginBottom="19dp" />
+
+</android.widget.RelativeLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context="marcatento.com.marcatento.controller.MenuActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/btnJogar"
+        style="@style/ButtonStyle"
+        android:layout_below="@+id/imageView"
+        android:text="Jogar"
+        android:onClick="abrirMarcador" />
+
+    <Button
+        android:id="@+id/btnHistorico"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/btnJogar"
+        android:text="Histórico"
+        android:onClick="abrirHistorico" />
+
+    <Button
+        android:id="@+id/btnOpcoes"
+        style="@style/ButtonStyle"
+        android:layout_below="@id/btnHistorico"
+        android:text="Opções" />
+
+</android.widget.RelativeLayout>
